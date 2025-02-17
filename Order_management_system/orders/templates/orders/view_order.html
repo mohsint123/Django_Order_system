@@ -1,0 +1,23 @@
+{% extends "orders/base.html" %}
+
+{% block body %}
+<h3 class="m-4">Order Details</h3>
+<div class="row">
+  <div class="col-12">
+    <div class="card bg-light ms-4 me-4 mb-4">
+      <div class="card-header">
+        <i class="fa-solid fa-circle-info fa-lg"></i> Order {{ order.id }} - Table {{ order.table_number }}
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled">
+          <li><strong>Table Number:</strong> {{ order.table_number }}</li>
+          <li><strong>Items:</strong> {{ order.items }}</li>
+          <li><strong>Total Price:</strong> ${{ order.total_price }}</li>
+          <li><strong>Status:</strong> {{ order.status }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="{% url 'index' %}" class="btn btn-primary ms-4">Back to Orders</a>
+{% endblock %}
